@@ -184,3 +184,13 @@ Con apenas **4 filas** en `plantillas/registro_experimento.csv`, el promedio cal
 * **Ausencia de potencia estadística:** Con solo dos observaciones por grupo no es posible estimar con fiabilidad la media real ni la variabilidad entre tiendas y semanas.
 * **Vulnerabilidad total a valores extremos:** Un solo registro atípico altera por completo el promedio de un grupo.
 * **Sin validez inferencial:** A diferencia del diseño completo de $N = 40$ unidades pareadas en las 10 tiendas, una tabla de 4 filas no permite realizar pruebas de hipótesis ni respaldar decisiones gerenciales.
+
+### Bonus: Adaptación del diseño a un ensayo clínico de vacuna
+
+* **Hipótesis:** La administración de la vacuna candidata reduce la incidencia de infección sintomática confirmada en comparación con el grupo control durante un seguimiento de 12 semanas.
+* **Unidad experimental:** Cada participante voluntario elegible incorporado y aleatorizado en el ensayo.
+* **Factor, niveles y tratamiento:** El factor es el esquema aplicado, con niveles vacuna activa y control; el tratamiento consiste en administrar la dosis asignada bajo protocolo clínico estandarizado.
+* **Grupo de control:** Participantes que reciben placebo o esquema comparador bajo idénticas condiciones de seguimiento clínico, permitiendo medir el efecto neto de la vacuna frente a la evolución natural sin inmunización activa.
+* **Aleatorización y ciego:** Asignación aleatoria con semilla fija para equilibrar características basales entre grupos, acompañada de doble ciego para que ni los participantes ni el personal evaluador conozcan la asignación al registrar síntomas o confirmar casos.
+* **Variable respuesta y factores a controlar:** Variable respuesta definida por la tasa de casos confirmados y eventos adversos registrados por el equipo médico, controlando o estratificando por edad, comorbilidades, exposición previa y tiempo de seguimiento.
+* **Limitaciones:** Posibles pérdidas de seguimiento, heterogeneidad en la exposición real al patógeno entre participantes y restricciones de validez externa al extrapolar a grupos poblacionales no incluidos en el ensayo.

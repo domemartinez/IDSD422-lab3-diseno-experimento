@@ -12,23 +12,18 @@
 from pathlib import Path
 import pandas as pd
 
-csv_path = Path("plantillas/registro_experimento.csv")
-df = pd.read_csv(csv_path)
+ruta_csv = Path("plantillas/registro_experimento.csv")
+df = pd.read_csv(ruta_csv)
 
-print("=== Registro del experimento ===")
+print("=== Datos de plantillas/registro_experimento.csv ===")
 print(df.to_string(index=False))
 print(f"\nTotal de filas: {len(df)}")
 
-# Ajusta los nombres de columnas si tu CSV usa otros
-col_grupo = "grupo" if "grupo" in df.columns else df.columns[0]
-col_respuesta = (
-    "ventas"
-    if "ventas" in df.columns
-    else df.select_dtypes(include="number").columns[-1]
-)
+col_grupo = "ubicacion" if "ubicacion" in df.columns else df.select_dtypes(exclude="number").columns[0]
+col_ventas = "ventas_producto" if "ventas_producto" in df.columns else df.select_dtypes(include="number").columns[-1]
 
 resumen = (
-    df.groupby(col_grupo, dropna=False)[col_respuesta]
+    df.groupby(col_grupo, dropna=False)[col_ventas]
     .agg(n="count", media="mean", sd="std", min="min", max="max")
     .reset_index()
 )

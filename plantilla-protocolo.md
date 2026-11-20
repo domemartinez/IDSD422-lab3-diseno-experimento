@@ -1,12 +1,10 @@
 # Plantilla de protocolo — Experimento de ubicación de producto
 
-**Equipo:** ___ · **Integrantes:** ___ · **Fecha:** 27/10/2026
-
-Completa cada sección. Usa commits por sección; la historia del repositorio se revisa.
+ **Nombre:** Doménica Martínez · **Fecha:** 19/11/2026
 
 ## 1. Pregunta e hipótesis
 
-*Hipótesis que el experimento pueda confirmar o refutar (formúlela como una comparación medible entre los grupos).*
+Ubicar el producto estrella de RetailAndina S.A. en el **pasillo principal** incrementa el promedio de **unidades vendidas** por semana en comparación con mantenerlo en su **ubicación habitual**, durante un período experimental de **1 semana** de operación continua bajo condiciones equivalentes.
 
 ## 2. Unidad experimental
 

@@ -7,3 +7,31 @@
 # TODO 3: imprime el número de registros por grupo (value_counts)
 # TODO 4: escribe 2–3 líneas de interpretación (sección 9 de la plantilla):
 #         por qué con 4 filas no se puede concluir y qué le faltaría al análisis
+
+
+from pathlib import Path
+import pandas as pd
+
+csv_path = Path("plantillas/registro_experimento.csv")
+df = pd.read_csv(csv_path)
+
+print("=== Registro del experimento ===")
+print(df.to_string(index=False))
+print(f"\nTotal de filas: {len(df)}")
+
+# Ajusta los nombres de columnas si tu CSV usa otros
+col_grupo = "grupo" if "grupo" in df.columns else df.columns[0]
+col_respuesta = (
+    "ventas"
+    if "ventas" in df.columns
+    else df.select_dtypes(include="number").columns[-1]
+)
+
+resumen = (
+    df.groupby(col_grupo, dropna=False)[col_respuesta]
+    .agg(n="count", media="mean", sd="std", min="min", max="max")
+    .reset_index()
+)
+
+print("\n=== Resumen por grupo ===")
+print(resumen.to_string(index=False))
